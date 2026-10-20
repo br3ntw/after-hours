@@ -41,7 +41,7 @@ jobs:
       AH_REDIS_URL: redis://localhost:6379/0
       AH_JWT_SECRET: ci-only-secret-not-used-anywhere-else-0123456789
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
       - uses: astral-sh/setup-uv@v6
         with:
           enable-cache: true
@@ -65,7 +65,7 @@ jobs:
       run:
         working-directory: apps/web
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
       - uses: actions/setup-node@v4
         with:
           node-version: 24
@@ -109,7 +109,7 @@ jobs:
       AH_SEED_PASSWORD: ci-only-seed-password
       AH_DEMO_LOGIN: "true"
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
       - uses: astral-sh/setup-uv@v6
         with:
           enable-cache: true
