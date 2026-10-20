@@ -1,0 +1,10 @@
+{
+  "name": "after-hours",
+  "private": true,
+  "description": "Runs the whole local stack. The web app's own scripts live in apps/web.",
+  "scripts": {
+    "dev": "./scripts/dev.sh",
+    "test": "cd apps/web && npm test",
+    "e2e": "cd apps/web && npm run e2e"
+  }
+}

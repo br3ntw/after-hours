@@ -1,0 +1,156 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  api:
+    name: API (lint · types · migrations · tests)
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: apps/api
+    services:
+      postgres:
+        image: postgres:17
+        env:
+          POSTGRES_USER: postgres
+          POSTGRES_PASSWORD: postgres
+          POSTGRES_DB: afterhours_test
+        ports: ["5432:5432"]
+        options: >-
+          --health-cmd "pg_isready -U postgres" --health-interval 5s --health-timeout 5s --health-retries 10
+      redis:
+        image: redis:7
+        ports: ["6379:6379"]
+        options: >-
+          --health-cmd "redis-cli ping" --health-interval 5s --health-timeout 5s --health-retries 10
+    env:
+      AH_ENV: test
+      AH_TEST_DATABASE_URL: postgresql+asyncpg://postgres:postgres@localhost:5432/afterhours_test
+      AH_DATABASE_URL: postgresql+asyncpg://postgres:postgres@localhost:5432/afterhours_test
+      AH_REDIS_URL: redis://localhost:6379/0
+      AH_JWT_SECRET: ci-only-secret-not-used-anywhere-else-0123456789
+    steps:
+      - uses: actions/checkout@v4
+      - uses: astral-sh/setup-uv@v6
+        with:
+          enable-cache: true
+      - run: uv sync --locked
+      - run: uv run ruff format --check .
+      - run: uv run ruff check .
+      - run: uv run mypy src tests
+      - name: Tests (also migrate base → head)
+        run: uv run pytest -q
+      - name: Models and migrations agree
+        run: uv run alembic upgrade head && uv run alembic check
+      - name: OpenAPI contract is up to date
+        run: |
+          uv run python -m afterhours.openapi > ../../docs/openapi.json
+          git diff --exit-code -- ../../docs/openapi.json
+
+  web:
+    name: Web (lint · types · tests · build)
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: apps/web
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+          cache: npm
+          cache-dependency-path: apps/web/package-lock.json
+      - run: npm ci
+      - name: Generated API types match the contract
+        run: |
+          npm run gen:api
+          git diff --exit-code -- src/lib/api/schema.d.ts
+      - run: npx prettier --check .
+      - run: npm run lint
+      - run: npm run typecheck
+      - run: npm test
+      - run: npm run build
+
+  e2e:
+    name: End-to-end (Playwright, full stack)
+    runs-on: ubuntu-latest
+    needs: [api, web]
+    services:
+      postgres:
+        image: postgres:17
+        env:
+          POSTGRES_USER: postgres
+          POSTGRES_PASSWORD: postgres
+          POSTGRES_DB: afterhours
+        ports: ["5432:5432"]
+        options: >-
+          --health-cmd "pg_isready -U postgres" --health-interval 5s --health-timeout 5s --health-retries 10
+      redis:
+        image: redis:7
+        ports: ["6379:6379"]
+        options: >-
+          --health-cmd "redis-cli ping" --health-interval 5s --health-timeout 5s --health-retries 10
+    env:
+      AH_ENV: dev
+      AH_DATABASE_URL: postgresql+asyncpg://postgres:postgres@localhost:5432/afterhours
+      AH_REDIS_URL: redis://localhost:6379/0
+      AH_JWT_SECRET: ci-only-secret-not-used-anywhere-else-0123456789
+      AH_SEED_PASSWORD: ci-only-seed-password
+      AH_DEMO_LOGIN: "true"
+    steps:
+      - uses: actions/checkout@v4
+      - uses: astral-sh/setup-uv@v6
+        with:
+          enable-cache: true
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+          cache: npm
+          cache-dependency-path: apps/web/package-lock.json
+      - name: API, migrations and seed
+        working-directory: apps/api
+        run: |
+          uv sync --locked
+          uv run alembic upgrade head
+          uv run afterhours-seed
+          nohup uv run uvicorn afterhours.main:app --port 8000 > ../../api.log 2>&1 &
+          nohup uv run afterhours-worker > ../../worker.log 2>&1 &
+      - name: Web (production build)
+        working-directory: apps/web
+        run: |
+          npm ci
+          npm run build
+          nohup npx next start -p 3000 > ../../web.log 2>&1 &
+          npx playwright install --with-deps chromium
+      - name: Wait for the stack
+        run: |
+          for i in $(seq 1 60); do
+            curl -sf http://localhost:8000/readyz && curl -sf -o /dev/null http://localhost:3000/login && exit 0
+            sleep 1
+          done
+          echo "stack did not become ready"; cat api.log worker.log web.log; exit 1
+      - name: Playwright
+        working-directory: apps/web
+        run: npx playwright test
+      - name: Upload report and logs on failure
+        if: failure()
+        uses: actions/upload-artifact@v4
+        with:
+          name: e2e-artifacts
+          path: |
+            apps/web/playwright-report
+            apps/web/test-results
+            api.log
+            worker.log
+            web.log

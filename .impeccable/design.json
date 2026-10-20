@@ -1,0 +1,716 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-10-14T14:06:13+00:00",
+  "title": "Design System: AFTER HOURS",
+  "extensions": {
+    "colorMeta": {
+      "canvas": {
+        "role": "neutral",
+        "displayName": "Lanternfall Night",
+        "canonical": "oklch(17.6% 0.033 256.4)",
+        "tonalRamp": [
+          "#030b19",
+          "#192534",
+          "#344151",
+          "#525f70",
+          "#717e91",
+          "#91a0b3",
+          "#b7c5da",
+          "#e5f0fe"
+        ]
+      },
+      "surface": {
+        "role": "neutral",
+        "displayName": "Deep Harbor Navy",
+        "canonical": "oklch(21.8% 0.036 251.3)",
+        "tonalRamp": [
+          "#020c19",
+          "#172535",
+          "#324152",
+          "#4f5f71",
+          "#6e7f92",
+          "#8fa0b4",
+          "#b4c6db",
+          "#e3f0fe"
+        ]
+      },
+      "surface-raised": {
+        "role": "neutral",
+        "displayName": "Raised Dusk",
+        "canonical": "oklch(25.8% 0.048 255.5)",
+        "tonalRamp": [
+          "#000b1f",
+          "#14253b",
+          "#2f4159",
+          "#4c5f78",
+          "#6b7f9a",
+          "#8ba0bc",
+          "#b0c6e3",
+          "#e4f0ff"
+        ]
+      },
+      "surface-hover": {
+        "role": "neutral",
+        "displayName": "Hover Dusk",
+        "canonical": "oklch(29.3% 0.055 254.6)",
+        "tonalRamp": [
+          "#000b1f",
+          "#10253e",
+          "#2b415c",
+          "#485f7c",
+          "#677f9e",
+          "#88a1c1",
+          "#acc7e8",
+          "#e4f0fe"
+        ]
+      },
+      "line": {
+        "role": "neutral",
+        "displayName": "Hairline Navy",
+        "canonical": "oklch(31.3% 0.062 258.9)",
+        "tonalRamp": [
+          "#000924",
+          "#102441",
+          "#2b4060",
+          "#485e81",
+          "#677ea2",
+          "#87a0c5",
+          "#acc6ed",
+          "#e5efff"
+        ]
+      },
+      "line-strong": {
+        "role": "neutral",
+        "displayName": "Strong Hairline",
+        "canonical": "oklch(38.7% 0.070 256.7)",
+        "tonalRamp": [
+          "#000a21",
+          "#0b2445",
+          "#274064",
+          "#445f85",
+          "#627fa7",
+          "#83a0ca",
+          "#a8c6f1",
+          "#e5efff"
+        ]
+      },
+      "ink": {
+        "role": "neutral",
+        "displayName": "Moonlit Ink",
+        "canonical": "oklch(94.7% 0.014 258.3)",
+        "tonalRamp": [
+          "#080b11",
+          "#20242b",
+          "#3b4047",
+          "#595e66",
+          "#787e86",
+          "#999fa7",
+          "#bfc5cd",
+          "#e9eff8"
+        ]
+      },
+      "ink-muted": {
+        "role": "neutral",
+        "displayName": "Fog Blue",
+        "canonical": "oklch(75.1% 0.043 256.3)",
+        "tonalRamp": [
+          "#010b1d",
+          "#162539",
+          "#314157",
+          "#4e5f76",
+          "#6d7f97",
+          "#8da0ba",
+          "#b2c6e0",
+          "#e5f0fe"
+        ]
+      },
+      "ink-faint": {
+        "role": "neutral",
+        "displayName": "Faint Fog",
+        "canonical": "oklch(64.1% 0.049 257.6)",
+        "tonalRamp": [
+          "#010a1f",
+          "#14243c",
+          "#2f405a",
+          "#4c5f7a",
+          "#6b7f9b",
+          "#8ba0be",
+          "#b1c6e5",
+          "#e5efff"
+        ]
+      },
+      "primary": {
+        "role": "primary",
+        "displayName": "Signal Blue",
+        "canonical": "oklch(61.4% 0.209 261.7)",
+        "tonalRamp": [
+          "#000728",
+          "#001c5c",
+          "#003496",
+          "#084fd0",
+          "#2f73f7",
+          "#669cff",
+          "#a4c5fe",
+          "#e6effe"
+        ]
+      },
+      "primary-fill": {
+        "role": "primary",
+        "displayName": "Deep Signal Fill",
+        "canonical": "oklch(51.2% 0.204 263.8)",
+        "tonalRamp": [
+          "#000036",
+          "#00136a",
+          "#0128a9",
+          "#1c4fce",
+          "#3b72f4",
+          "#6b9bff",
+          "#a7c4fe",
+          "#e7effe"
+        ]
+      },
+      "primary-fill-hover": {
+        "role": "primary",
+        "displayName": "Deep Signal Fill Hover",
+        "canonical": "oklch(55.4% 0.208 263.8)",
+        "tonalRamp": [
+          "#000036",
+          "#001469",
+          "#0028aa",
+          "#1a4ed0",
+          "#3972f7",
+          "#6b9bff",
+          "#a7c4fe",
+          "#e7effe"
+        ]
+      },
+      "cyan": {
+        "role": "secondary",
+        "displayName": "Lantern Cyan",
+        "canonical": "oklch(82.1% 0.136 218.1)",
+        "tonalRamp": [
+          "#000e12",
+          "#012933",
+          "#014857",
+          "#00697e",
+          "#0b8ba6",
+          "#0eb0d2",
+          "#37d9ff",
+          "#d5f5ff"
+        ]
+      },
+      "purple": {
+        "role": "tertiary",
+        "displayName": "Simulation Violet",
+        "canonical": "oklch(65.2% 0.208 294.4)",
+        "tonalRamp": [
+          "#10002a",
+          "#2c015f",
+          "#4d009d",
+          "#6a34c4",
+          "#8959e9",
+          "#a785fe",
+          "#c8b8ff",
+          "#efebff"
+        ]
+      },
+      "ok": {
+        "role": "status",
+        "displayName": "Running Green",
+        "canonical": "oklch(77.6% 0.154 163.3)",
+        "tonalRamp": [
+          "#000f07",
+          "#002c1c",
+          "#004c34",
+          "#066f4d",
+          "#079468",
+          "#08bb84",
+          "#4ae3a8",
+          "#c2ffe1"
+        ]
+      },
+      "warn": {
+        "role": "status",
+        "displayName": "Delay Amber",
+        "canonical": "oklch(83.1% 0.145 74.2)",
+        "tonalRamp": [
+          "#130900",
+          "#341f00",
+          "#583802",
+          "#7f5301",
+          "#a87006",
+          "#d38f0f",
+          "#fbb549",
+          "#ffebd2"
+        ]
+      },
+      "crit": {
+        "role": "status",
+        "displayName": "Downtime Red",
+        "canonical": "oklch(68.9% 0.201 20.4)",
+        "tonalRamp": [
+          "#1f0002",
+          "#4a010d",
+          "#7b021b",
+          "#b0042b",
+          "#db3547",
+          "#ff626a",
+          "#feaaa9",
+          "#fee9e8"
+        ]
+      },
+      "closed": {
+        "role": "status",
+        "displayName": "Closed Slate",
+        "canonical": "oklch(68.5% 0.043 258.8)",
+        "tonalRamp": [
+          "#020b1d",
+          "#172439",
+          "#324057",
+          "#4f5e76",
+          "#6e7e97",
+          "#8fa0ba",
+          "#b4c5e1",
+          "#e5effe"
+        ]
+      },
+      "refurb": {
+        "role": "status",
+        "displayName": "Refurb Lilac",
+        "canonical": "oklch(74.9% 0.073 298.4)",
+        "tonalRamp": [
+          "#100225",
+          "#291a42",
+          "#453661",
+          "#635481",
+          "#8374a3",
+          "#a495c6",
+          "#cabaee",
+          "#f0ebff"
+        ]
+      },
+      "series-1": {
+        "role": "chart",
+        "displayName": "Series Teal",
+        "canonical": "oklch(66.4% 0.121 222.7)",
+        "tonalRamp": [
+          "#000e13",
+          "#012934",
+          "#044759",
+          "#016882",
+          "#038bac",
+          "#28aed5",
+          "#5bd5fd",
+          "#d8f4ff"
+        ]
+      },
+      "series-2": {
+        "role": "chart",
+        "displayName": "Series Violet",
+        "canonical": "oklch(65.2% 0.208 294.4)",
+        "tonalRamp": [
+          "#10002a",
+          "#2c015f",
+          "#4d009d",
+          "#6a34c4",
+          "#8959e9",
+          "#a785fe",
+          "#c8b8ff",
+          "#efebff"
+        ]
+      },
+      "series-3": {
+        "role": "chart",
+        "displayName": "Series Rose",
+        "canonical": "oklch(65.5% 0.168 352.8)",
+        "tonalRamp": [
+          "#1d000d",
+          "#460129",
+          "#750147",
+          "#9f2466",
+          "#c44986",
+          "#eb6ca8",
+          "#ffa4cb",
+          "#ffe7f0"
+        ]
+      },
+      "series-4": {
+        "role": "chart",
+        "displayName": "Series Blue",
+        "canonical": "oklch(62.1% 0.178 264.5)",
+        "tonalRamp": [
+          "#000036",
+          "#010178",
+          "#0d309b",
+          "#2953c0",
+          "#4675e5",
+          "#6d9aff",
+          "#a8c4fe",
+          "#e7effe"
+        ]
+      },
+      "land-tidewater": {
+        "role": "map",
+        "displayName": "Tidewater Quay",
+        "canonical": "oklch(29.0% 0.056 244.0)",
+        "tonalRamp": [
+          "#000c1a",
+          "#07263d",
+          "#24435b",
+          "#42617b",
+          "#61819c",
+          "#81a3bf",
+          "#a6c9e6",
+          "#e1f1ff"
+        ]
+      },
+      "land-clockwork": {
+        "role": "map",
+        "displayName": "Clockwork Canyon",
+        "canonical": "oklch(26.0% 0.025 82.6)",
+        "tonalRamp": [
+          "#100a02",
+          "#2a2316",
+          "#463f31",
+          "#655d4e",
+          "#857c6d",
+          "#a69d8d",
+          "#ccc3b2",
+          "#f7eddc"
+        ]
+      },
+      "land-aurora": {
+        "role": "map",
+        "displayName": "Aurora Heights",
+        "canonical": "oklch(25.3% 0.074 276.5)",
+        "tonalRamp": [
+          "#060429",
+          "#1c1f47",
+          "#363b66",
+          "#535a87",
+          "#7179a9",
+          "#929bcd",
+          "#b7c1f5",
+          "#eaeefe"
+        ]
+      },
+      "land-emberwood": {
+        "role": "map",
+        "displayName": "Emberwood",
+        "canonical": "oklch(27.1% 0.043 159.1)",
+        "tonalRamp": [
+          "#000f06",
+          "#0f2a1c",
+          "#2b4738",
+          "#496555",
+          "#688574",
+          "#89a795",
+          "#aecdba",
+          "#d7f8e4"
+        ]
+      },
+      "land-starlight": {
+        "role": "map",
+        "displayName": "Starlight Pier",
+        "canonical": "oklch(25.0% 0.063 296.5)",
+        "tonalRamp": [
+          "#0f0422",
+          "#271c3f",
+          "#43385d",
+          "#61567d",
+          "#81769f",
+          "#a297c2",
+          "#c8bce9",
+          "#f0ebfe"
+        ]
+      },
+      "water": {
+        "role": "map",
+        "displayName": "Lagoon Water",
+        "canonical": "oklch(15.8% 0.029 256.0)",
+        "tonalRamp": [
+          "#040b17",
+          "#1b2532",
+          "#36414f",
+          "#535f6e",
+          "#727e8f",
+          "#93a0b1",
+          "#b8c5d7",
+          "#e5f0fe"
+        ]
+      }
+    },
+    "typographyMeta": {
+      "display": {
+        "displayName": "Display",
+        "purpose": "Page titles in condensed caps (PARK OPERATIONS)."
+      },
+      "display-detail": {
+        "displayName": "Display Detail",
+        "purpose": "Attraction detail title."
+      },
+      "wordmark": {
+        "displayName": "Wordmark",
+        "purpose": "AFTER HOURS in the rail (30px on sign-on)."
+      },
+      "title": {
+        "displayName": "Title",
+        "purpose": "Panel and section headings, sentence case."
+      },
+      "body": {
+        "displayName": "Body",
+        "purpose": "Running UI text; nav items at 15px."
+      },
+      "body-sm": {
+        "displayName": "Body Small",
+        "purpose": "Secondary lines, sub-readings, log titles, chips."
+      },
+      "label": {
+        "displayName": "Label Caps",
+        "purpose": "Status-board labels, column headers, form labels."
+      },
+      "tag": {
+        "displayName": "Tag",
+        "purpose": "Status tags, log categories, stopped states, simulation indicator."
+      },
+      "numeral-lg": {
+        "displayName": "Reading",
+        "purpose": "Status-board values."
+      },
+      "numeral": {
+        "displayName": "Numeral",
+        "purpose": "Waits in tags, log ages, clocks, meter percentages."
+      }
+    },
+    "shadows": [
+      {
+        "name": "sheet",
+        "value": "0 8px 20px -10px rgb(0 0 0 / 0.7)",
+        "purpose": "Solid raised sheets: map controls, filter bar, legend, side sheet, toasts, dialogs, command palette."
+      },
+      {
+        "name": "tag-lift",
+        "value": "0 3px 8px -4px rgb(0 0 0 / 0.9)",
+        "purpose": "Ride-code tags on the park plan."
+      }
+    ],
+    "focus": {
+      "value": "outline: 2px solid var(--color-primary); outline-offset: 2px",
+      "purpose": "Global :focus-visible ring; inputs shift border to primary instead."
+    },
+    "backdrop": {
+      "value": "dialog: 70% near-black with 2px blur; command palette: 70% near-black",
+      "purpose": "The only translucency in the system."
+    },
+    "motion": [
+      {
+        "name": "ease-out",
+        "value": "cubic-bezier(0.22, 1, 0.36, 1)",
+        "purpose": "The single easing curve."
+      },
+      {
+        "name": "duration-fast",
+        "value": "140ms",
+        "purpose": "Hover and color transitions, button press."
+      },
+      {
+        "name": "duration-base",
+        "value": "180ms",
+        "purpose": "Dialog entrance."
+      },
+      {
+        "name": "duration-slow",
+        "value": "220ms",
+        "purpose": "State-change pulse ring and cyan flash, sheet slide-in, row enter."
+      },
+      {
+        "name": "shimmer",
+        "value": "1.4s linear infinite",
+        "purpose": "Skeleton loading only."
+      },
+      {
+        "name": "reduced-motion",
+        "value": "animations and transitions collapse to 0.01ms",
+        "purpose": "prefers-reduced-motion: reduce."
+      }
+    ],
+    "breakpoints": [
+      {
+        "name": "sm",
+        "value": "640px"
+      },
+      {
+        "name": "md",
+        "value": "768px",
+        "purpose": "Simulation indicator appears in the top bar."
+      },
+      {
+        "name": "lg",
+        "value": "1024px",
+        "purpose": "Vertical rail, four-column status board, detail side column."
+      },
+      {
+        "name": "xl",
+        "value": "1280px",
+        "purpose": "Command Center map plus 380px log column."
+      }
+    ]
+  },
+  "components": [
+    {
+      "name": "Primary Button",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "The one filled action per view (New work order, Sign on).",
+      "html": "<button class=\"ds-btn-primary\"><svg width=\"16\" height=\"16\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M5 12h14\"/><path d=\"M12 5v14\"/></svg>New work order</button>",
+      "css": ".ds-btn-primary { display: inline-flex; align-items: center; gap: 6px; height: 36px; padding: 0 14px; border: 0; border-radius: 4px; background: var(--color-primary-fill, #2559d9); color: #fff; font: 500 14px/1 var(--font-sans, Barlow, sans-serif); cursor: pointer; transition: background-color 140ms cubic-bezier(0.22,1,0.36,1), transform 140ms cubic-bezier(0.22,1,0.36,1); } .ds-btn-primary:hover { background: var(--color-primary-fill-hover, #2f66ea); } .ds-btn-primary:active { transform: scale(0.98); } .ds-btn-primary:focus-visible { outline: 2px solid var(--color-primary, #367bff); outline-offset: 2px; }"
+    },
+    {
+      "name": "Secondary Button",
+      "kind": "button",
+      "refersTo": "button-secondary",
+      "description": "Default button: raised navy with a hairline.",
+      "html": "<button class=\"ds-btn-secondary\">Assign</button>",
+      "css": ".ds-btn-secondary { height: 36px; padding: 0 14px; border: 1px solid var(--color-line, #1d3150); border-radius: 4px; background: var(--color-surface-raised, #13243a); color: var(--color-ink, #e8eef7); font: 500 14px/1 var(--font-sans, Barlow, sans-serif); cursor: pointer; transition: background-color 140ms cubic-bezier(0.22,1,0.36,1), border-color 140ms cubic-bezier(0.22,1,0.36,1); } .ds-btn-secondary:hover { border-color: var(--color-line-strong, #2b4569); background: var(--color-surface-hover, #182d47); } .ds-btn-secondary:active { transform: scale(0.98); } .ds-btn-secondary:focus-visible { outline: 2px solid var(--color-primary, #367bff); outline-offset: 2px; }"
+    },
+    {
+      "name": "Text Field",
+      "kind": "input",
+      "refersTo": "text-field",
+      "description": "Sign-on field with condensed caps label.",
+      "html": "<label class=\"ds-field\"><span class=\"ds-field-label\">Email</span><input class=\"ds-input\" type=\"email\" placeholder=\"ops@lanternfall.example\"></label>",
+      "css": ".ds-field { display: grid; gap: 6px; } .ds-field-label { font: 600 12px/1.33 var(--font-display, 'Barlow Condensed', sans-serif); letter-spacing: 0.06em; text-transform: uppercase; color: var(--color-ink-muted, #9db0ca); } .ds-input { padding: 8px 12px; border: 1px solid var(--color-line-strong, #2b4569); border-radius: 4px; background: var(--color-canvas, #07111f); color: var(--color-ink, #e8eef7); font: 400 14px/1.43 var(--font-sans, Barlow, sans-serif); } .ds-input::placeholder { color: var(--color-ink-faint, #7a8eab); } .ds-input:focus { outline: none; border-color: var(--color-primary, #367bff); }"
+    },
+    {
+      "name": "Nav Rail Item",
+      "kind": "nav",
+      "refersTo": "nav-item",
+      "description": "Rail link; active takes the cyan edge bar and icon.",
+      "html": "<nav class=\"ds-nav\"><a class=\"ds-nav-item is-active\" href=\"#\"><span class=\"ds-nav-bar\"></span><svg width=\"16\" height=\"16\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" aria-hidden=\"true\"><path d=\"m12 14 4-4\"/><path d=\"M3.34 19a10 10 0 1 1 17.32 0\"/></svg>Command Center</a><a class=\"ds-nav-item\" href=\"#\"><svg width=\"16\" height=\"16\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" aria-hidden=\"true\"><path d=\"M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z\"/></svg>Maintenance</a></nav>",
+      "css": ".ds-nav { display: grid; gap: 4px; width: 200px; padding: 12px; background: var(--color-surface, #0d1b2a); } .ds-nav-item { position: relative; display: flex; align-items: center; gap: 10px; padding: 8px 12px; border-radius: 4px; color: var(--color-ink-muted, #9db0ca); font: 400 15px/1.3 var(--font-sans, Barlow, sans-serif); text-decoration: none; transition: background-color 140ms cubic-bezier(0.22,1,0.36,1), color 140ms cubic-bezier(0.22,1,0.36,1); } .ds-nav-item svg { transition: transform 140ms cubic-bezier(0.22,1,0.36,1); } .ds-nav-item:hover { background: var(--color-surface-raised, #13243a); color: var(--color-ink, #e8eef7); } .ds-nav-item:hover svg { transform: translateX(2px); } .ds-nav-item.is-active { background: var(--color-surface-hover, #182d47); color: var(--color-ink, #e8eef7); font-weight: 500; } .ds-nav-item.is-active svg { color: var(--color-cyan, #38d9ff); transform: none; } .ds-nav-bar { position: absolute; left: 0; top: 8px; bottom: 8px; width: 2px; border-radius: 9999px; background: var(--color-cyan, #38d9ff); } .ds-nav-item:focus-visible { outline: 2px solid var(--color-primary, #367bff); outline-offset: 2px; }"
+    },
+    {
+      "name": "Filter Chip",
+      "kind": "chip",
+      "refersTo": "filter-chip",
+      "description": "Map filter toggles; selected is a cyan wash.",
+      "html": "<div class=\"ds-chips\"><button class=\"ds-chip is-on\">All</button><button class=\"ds-chip\">Coasters</button><button class=\"ds-chip\">Water</button></div>",
+      "css": ".ds-chips { display: flex; gap: 6px; } .ds-chip { display: inline-flex; align-items: center; gap: 6px; padding: 4px 8px; border: 1px solid rgb(255 255 255 / 0.1); border-radius: 3px; background: transparent; color: var(--color-ink-muted, #9db0ca); font: 500 13px/1.2 var(--font-sans, Barlow, sans-serif); cursor: pointer; transition: background-color 140ms cubic-bezier(0.22,1,0.36,1), border-color 140ms cubic-bezier(0.22,1,0.36,1), color 140ms cubic-bezier(0.22,1,0.36,1); } .ds-chip:hover { border-color: rgb(255 255 255 / 0.25); color: var(--color-ink, #e8eef7); } .ds-chip.is-on { border-color: color-mix(in oklab, var(--color-cyan, #38d9ff) 70%, transparent); background: color-mix(in oklab, var(--color-cyan, #38d9ff) 14%, transparent); color: var(--color-ink, #e8eef7); } .ds-chip:focus-visible { outline: 2px solid var(--color-primary, #367bff); outline-offset: 2px; }"
+    },
+    {
+      "name": "Status Tag",
+      "kind": "chip",
+      "refersTo": "status-tag",
+      "description": "Attraction state: icon plus condensed caps word on a status wash.",
+      "html": "<span class=\"ds-status ds-status-down\"><svg width=\"14\" height=\"14\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" aria-hidden=\"true\"><path d=\"m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3\"/><path d=\"M12 9v4\"/><path d=\"M12 17h.01\"/></svg>Down</span> <span class=\"ds-status ds-status-ok\"><svg width=\"14\" height=\"14\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" aria-hidden=\"true\"><circle cx=\"12\" cy=\"12\" r=\"10\"/><path d=\"m9 12 2 2 4-4\"/></svg>Operating</span>",
+      "css": ".ds-status { display: inline-flex; align-items: center; gap: 4px; padding: 2px 6px; border-radius: 3px; font: 600 11px/1 var(--font-display, 'Barlow Condensed', sans-serif); letter-spacing: 0.05em; text-transform: uppercase; white-space: nowrap; } .ds-status-down { color: var(--color-crit, #ff5964); background: color-mix(in oklab, var(--color-crit, #ff5964) 14%, transparent); } .ds-status-ok { color: var(--color-ok, #35d49a); background: color-mix(in oklab, var(--color-ok, #35d49a) 12%, transparent); }"
+    },
+    {
+      "name": "Panel",
+      "kind": "card",
+      "refersTo": "panel",
+      "description": "Flat ruled container for charts, lists and stats.",
+      "html": "<section class=\"ds-panel\"><h2 class=\"ds-panel-title\">Gate count today</h2><p class=\"ds-panel-body\">177,688 rides dispatched · simulated</p></section>",
+      "css": ".ds-panel { padding: 16px; border: 1px solid var(--color-line, #1d3150); border-radius: 6px; background: var(--color-surface, #0d1b2a); } .ds-panel-title { margin: 0; font: 600 14px/1.43 var(--font-sans, Barlow, sans-serif); color: var(--color-ink, #e8eef7); } .ds-panel-body { margin: 4px 0 0; font: 400 13px/1.4 var(--font-sans, Barlow, sans-serif); color: var(--color-ink-muted, #9db0ca); }"
+    },
+    {
+      "name": "Status Board",
+      "kind": "custom",
+      "refersTo": "status-board-cell",
+      "description": "Hairline-grid strip of readings: caps label, mono value, muted sub-line.",
+      "html": "<section class=\"ds-board\"><div class=\"ds-cell\"><p class=\"ds-cell-label\">Rides up</p><p class=\"ds-cell-value\">24<span class=\"ds-faint\">/24</span></p><p class=\"ds-cell-sub\">0 stopped · 0 on hold</p></div><div class=\"ds-cell\"><p class=\"ds-cell-label\">Avg posted wait</p><p class=\"ds-cell-value\">50<span class=\"ds-unit\">min</span></p><p class=\"ds-cell-sub\">1 min over last 12 ticks</p></div><div class=\"ds-cell ds-cell-alert\"><p class=\"ds-cell-label\">Open work orders</p><p class=\"ds-cell-value\">3</p><p class=\"ds-cell-sub\"><b class=\"ds-crit\">1 SEV1</b> · 2 other</p></div></section>",
+      "css": ".ds-board { display: grid; grid-template-columns: repeat(3, minmax(0,1fr)); gap: 1px; overflow: hidden; border: 1px solid var(--color-line, #1d3150); border-radius: 4px; background: var(--color-line, #1d3150); } .ds-cell { padding: 12px 16px; background: var(--color-surface, #0d1b2a); } .ds-cell-alert { background: color-mix(in oklab, var(--color-crit, #ff5964) 6%, var(--color-surface, #0d1b2a)); } .ds-cell p { margin: 0; } .ds-cell-label { font: 600 12px/1.33 var(--font-display, 'Barlow Condensed', sans-serif); letter-spacing: 0.06em; text-transform: uppercase; color: var(--color-ink-muted, #9db0ca); } .ds-cell-value { margin-top: 4px !important; font: 600 24px/1 var(--font-mono, 'JetBrains Mono', monospace); font-variant-numeric: tabular-nums; color: var(--color-ink, #e8eef7); } .ds-faint { color: var(--color-ink-faint, #7a8eab); } .ds-unit { margin-left: 4px; font: 400 14px/1 var(--font-sans, Barlow, sans-serif); color: var(--color-ink-muted, #9db0ca); } .ds-cell-sub { margin-top: 6px !important; font: 400 13px/1.4 var(--font-sans, Barlow, sans-serif); color: var(--color-ink-muted, #9db0ca); } .ds-crit { color: var(--color-crit, #ff5964); }"
+    },
+    {
+      "name": "Ride-Code Tag",
+      "kind": "custom",
+      "refersTo": "ride-code-tag",
+      "description": "Park-plan marker: code cell plus wait or spelled-out stopped state.",
+      "html": "<div class=\"ds-tags\"><button class=\"ds-tag\"><span class=\"ds-tag-code\">GLR</span><span class=\"ds-tag-val\">100<small>m</small></span></button><button class=\"ds-tag ds-tag-down\"><span class=\"ds-tag-code\">BRC</span><span class=\"ds-tag-val ds-tag-state\">DOWN</span></button><button class=\"ds-tag ds-tag-stopped\"><span class=\"ds-tag-code\">PPH</span><span class=\"ds-tag-val ds-tag-state ds-closed\">CLSD</span></button><button class=\"ds-tag is-selected\"><span class=\"ds-tag-code\">MLM</span><span class=\"ds-tag-val\">10<small>m</small></span></button></div>",
+      "css": ".ds-tags { display: flex; gap: 12px; padding: 16px; background: var(--color-canvas, #07111f); } .ds-tag { display: flex; align-items: stretch; padding: 0; border: 1px solid var(--color-line-strong, #2b4569); border-radius: 2px; background: var(--color-surface, #0d1b2a); box-shadow: 0 3px 8px -4px rgb(0 0 0 / 0.9); line-height: 1; cursor: pointer; transition: border-color 140ms cubic-bezier(0.22,1,0.36,1), background-color 140ms cubic-bezier(0.22,1,0.36,1); } .ds-tag:hover { border-color: var(--color-ink-faint, #7a8eab); } .ds-tag-code { padding: 4px 6px; font: 600 12px/1 var(--font-display, 'Barlow Condensed', sans-serif); letter-spacing: 0.025em; color: var(--color-ink-muted, #9db0ca); } .ds-tag:hover .ds-tag-code { color: var(--color-ink, #e8eef7); } .ds-tag-val { display: flex; align-items: center; padding: 4px 6px; border-left: 1px solid var(--color-line-strong, #2b4569); font: 600 12px/1 var(--font-mono, 'JetBrains Mono', monospace); font-variant-numeric: tabular-nums; color: var(--color-ink, #e8eef7); } .ds-tag-val small { margin-left: 2px; font: 400 10px/1 var(--font-sans, Barlow, sans-serif); color: var(--color-ink-muted, #9db0ca); } .ds-tag-state { font: 700 11px/1 var(--font-display, 'Barlow Condensed', sans-serif); letter-spacing: 0.05em; } .ds-tag-down { border-color: var(--color-crit, #ff5964); background: color-mix(in oklab, var(--color-crit, #ff5964) 20%, transparent); } .ds-tag-down .ds-tag-val { border-left-color: color-mix(in oklab, var(--color-crit, #ff5964) 60%, transparent); color: var(--color-crit, #ff5964); } .ds-tag-stopped { background: var(--color-canvas, #07111f); } .ds-closed { color: var(--color-closed, #8a9bb5); } .ds-tag.is-selected { border-color: var(--color-cyan, #38d9ff); background: var(--color-surface-hover, #182d47); outline: 2px solid color-mix(in oklab, var(--color-cyan, #38d9ff) 60%, transparent); outline-offset: 1px; } .ds-tag:focus-visible { outline: 2px solid var(--color-primary, #367bff); outline-offset: 2px; }"
+    },
+    {
+      "name": "Raised Sheet",
+      "kind": "card",
+      "refersTo": "sheet",
+      "description": "Solid floating surface: map overlays, side sheet, toasts, dialogs.",
+      "html": "<div class=\"ds-sheet-wrap\"><div class=\"ds-sheet\"><p class=\"ds-sheet-title\">Pendulum Plunge · Delayed</p><p class=\"ds-sheet-body\">Guest-assist stop · Simulation</p></div></div>",
+      "css": ".ds-sheet-wrap { padding: 24px; background: var(--color-canvas, #07111f); } .ds-sheet { max-width: 320px; padding: 12px 14px; border: 1px solid var(--color-line-strong, #2b4569); border-radius: 6px; background: var(--color-surface-raised, #13243a); box-shadow: 0 8px 20px -10px rgb(0 0 0 / 0.7); } .ds-sheet p { margin: 0; } .ds-sheet-title { font: 500 14px/1.43 var(--font-sans, Barlow, sans-serif); color: var(--color-ink, #e8eef7); } .ds-sheet-body { margin-top: 2px !important; font: 400 13px/1.4 var(--font-sans, Barlow, sans-serif); color: var(--color-ink-muted, #9db0ca); }"
+    }
+  ],
+  "narrative": {
+    "northStar": "The Shift Console",
+    "overview": "AFTER HOURS is an operations console an operator could run a night shift on. It is dense, ruled and typographic: flat navy grounds divided by hairline rules, signage-derived lettering, and every measured number set in a monospace so digits never jump as values tick. The park is drawn as an operations plan, not an illustration: straight-edged zones on a survey grid, transit-diagram paths, and three-letter ride codes like a departures board.\n\nThe system refuses the AI-dashboard default it replaced: glowing frosted cards, ring and gauge KPI tiles, illustrated maps and hero art. Depth is earned only by things that actually float (map overlays, sheets, toasts, dialogs), and they float as solid ruled sheets with an offset shadow, never as glass. Color does jobs only: cyan means live or selected, purple means simulation, and the five status colors mean state and nothing else.\n\nAusterity is the risk of this world; it is offset by precision rather than decoration: consistent hairlines, a strict type split, and real data density.",
+    "keyCharacteristics": [
+      "Flat navy grounds; hairline rules drawn as 1px gaps over the line color.",
+      "Barlow for UI, Barlow Condensed caps for headings and column labels, JetBrains Mono for every measured number.",
+      "Square, instrument-like corners (2px tags, 3-4px controls, 6px panels).",
+      "Solid raised sheets with an offset shadow for anything floating; translucency only on modal backdrops.",
+      "Schematic park plan with ride-code tags that spell out stopped states (DOWN / CLSD / RFB).",
+      "One SIMULATION · FICTIONAL PARK indicator in the top bar, not a pill per panel."
+    ],
+    "rules": [
+      {
+        "name": "The Color-Has-A-Job Rule",
+        "body": "Cyan is live or selected, purple is simulation, status colors are state. No accent appears for decoration.",
+        "section": "colors"
+      },
+      {
+        "name": "The Never-Color-Alone Rule",
+        "body": "Every status carries an icon or a word (WCAG 1.4.1); stopped rides on the map spell out DOWN, CLSD or RFB.",
+        "section": "colors"
+      },
+      {
+        "name": "The Fill-Not-Signal Rule",
+        "body": "Filled controls use primary-fill; Signal Blue is for focus, borders and graphics.",
+        "section": "colors"
+      },
+      {
+        "name": "The Measured-In-Mono Rule",
+        "body": "Any number that is a measurement (wait, count, percent, clock, age) is JetBrains Mono with tabular figures; its unit drops back to Barlow at a smaller, muted size.",
+        "section": "typography"
+      },
+      {
+        "name": "The Caps-Are-Condensed Rule",
+        "body": "Uppercase lettering is always Barlow Condensed with positive tracking; Barlow regular is never set in caps.",
+        "section": "typography"
+      },
+      {
+        "name": "The Hairline-Grid Rule",
+        "body": "Rules between adjacent cells are drawn as a 1px gap over the line color, so they stay exact at every width; never as stacked borders.",
+        "section": "layout"
+      },
+      {
+        "name": "The Solid-Sheet Rule",
+        "body": "Floating surfaces are opaque raised sheets with a hairline and an offset shadow. No backdrop blur on any sheet.",
+        "section": "elevation"
+      },
+      {
+        "name": "The One-Translucency Rule",
+        "body": "Translucency is reserved for modal backdrops (the dialog and the command palette dim the console; the dialog adds a 2px blur). Nothing else is see-through.",
+        "section": "elevation"
+      },
+      {
+        "name": "The Straight-Edge Rule",
+        "body": "Map geometry is polygons and straight segments only; no organic coastlines or curves.",
+        "section": "shapes"
+      }
+    ],
+    "dos": [
+      "**Do** set every measured number in JetBrains Mono with tabular figures, and its unit in smaller muted Barlow.",
+      "**Do** draw cell rules as a 1px gap over the line color (the Hairline-Grid Rule).",
+      "**Do** make anything floating an opaque raised sheet with a strong hairline and the sheet shadow.",
+      "**Do** pair every status color with an icon or a spelled-out word, including DOWN / CLSD / RFB on the map.",
+      "**Do** keep motion to 140-220ms ease-out on transform, opacity and color; state changes pulse once at 220ms; honor reduced motion.",
+      "**Do** use semantic color tokens from globals.css in components."
+    ],
+    "donts": [
+      "**Don't** use backdrop blur or translucent fills on panels or sheets; translucency belongs to modal backdrops only.",
+      "**Don't** build KPI ring or gauge cards, illustrated map art or hero images; the board is typographic and the map is schematic.",
+      "**Don't** add a \"simulated\" pill to each panel; the top-bar indicator carries it.",
+      "**Don't** use Signal Blue as a fill under white text.",
+      "**Don't** use cyan, violet or a status color decoratively.",
+      "**Don't** round corners past 6px, or fully round anything other than an indicator dot."
+    ]
+  }
+}
