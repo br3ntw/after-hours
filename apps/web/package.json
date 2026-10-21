@@ -5,6 +5,7 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
+    "build:pages": "NEXT_PUBLIC_AH_BROWSER_DEMO=1 next build && touch out/.nojekyll",
     "start": "next start",
     "lint": "eslint",
     "gen:api": "openapi-typescript ../../docs/openapi.json -o src/lib/api/schema.d.ts",
@@ -12,7 +13,8 @@
     "test": "vitest run",
     "test:watch": "vitest",
     "format": "prettier --write .",
-    "e2e": "playwright test"
+    "e2e": "playwright test",
+    "e2e:pages": "playwright test -c playwright.pages.config.ts"
   },
   "dependencies": {
     "@tanstack/react-query": "^5.104.2",

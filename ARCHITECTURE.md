@@ -251,6 +251,10 @@ calibrated. Every simulated value carries a `SIMULATED` label in the UI.
   pinch, or keyboard.
 - **Routes:** `/` command center, `/map`, `/attractions`, `/attractions/[slug]`,
   `/maintenance`, `/analytics`, `/login`. Demo controls live in the header (Administrator).
+- **Browser demo build** (`npm run build:pages`, [ADR-0005](docs/adr/0005-browser-only-demo-build.md)):
+  a static export for GitHub Pages. `src/lib/demo/` ports the queueing model and implements
+  the REST contract and event stream in the page, plugged in through the API client's
+  `fetchImpl`. It is labeled as a browser demo on every screen.
 
 ## 9. Observability _(implemented except Grafana)_
 
@@ -269,6 +273,9 @@ calibrated. Every simulated value carries a `SIMULATED` label in the UI.
 - **Grafana dashboards:** not built yet. Scrape configs and dashboards-as-code are next.
 
 ## 10. Deployment target _(planned; nothing is deployed without approval)_
+
+The only deployed artifact is the static browser demo on GitHub Pages
+(`.github/workflows/pages.yml`, free). The full stack is not deployed.
 
 The database is **Supabase-hosted PostgreSQL** for shared dev/demo
 ([ADR-0004](docs/adr/0004-supabase-as-managed-postgres.md)), and RDS works with the same code.

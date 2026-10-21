@@ -5,10 +5,12 @@ import { useRouter } from "next/navigation";
 import { useEffect, useState, type FormEvent } from "react";
 
 import { LogoMark } from "@/components/app-shell";
+import { DemoNotice } from "@/components/demo-notice";
 import { ParkArt } from "@/components/park-map/park-art";
 import { api, ApiError } from "@/lib/api/client";
 import type { Role } from "@/lib/api/types";
 import { useAuth } from "@/lib/auth/auth-provider";
+import { BROWSER_DEMO } from "@/lib/demo/mode";
 
 const ROLES: { role: Role; title: string; can: string }[] = [
   {
@@ -77,6 +79,7 @@ export default function LoginPage() {
           Sign on to Lanternfall Park, a fictional park. Guests, queues, wait times and faults all come from a
           simulation.
         </p>
+        <DemoNotice variant="card" />
 
         {demo && !showForm && (
           <section aria-labelledby="roles-h" className="mt-6">
@@ -116,13 +119,16 @@ export default function LoginPage() {
                 </li>
               ))}
             </ul>
-            <button
-              type="button"
-              onClick={() => setShowForm(true)}
-              className="mt-4 text-[13px] text-ink-muted underline-offset-4 hover:text-ink hover:underline"
-            >
-              Sign on with email and password
-            </button>
+            {/* The browser demo has no password accounts: roles only. */}
+            {!BROWSER_DEMO && (
+              <button
+                type="button"
+                onClick={() => setShowForm(true)}
+                className="mt-4 text-[13px] text-ink-muted underline-offset-4 hover:text-ink hover:underline"
+              >
+                Sign on with email and password
+              </button>
+            )}
           </section>
         )}
 

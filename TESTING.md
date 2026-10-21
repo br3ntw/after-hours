@@ -14,6 +14,7 @@ Every result recorded here comes from an actual run. Commands are listed so anyo
 | Simulation model | pytest (pure functions, seeded RNG) | Queue growth and drain, downtime, balking, posted-wait rounding, demand redistribution, determinism |
 | E2E (manual, browser) | Claude Browser pane against the running stack | Every screen and flow; see IMPLEMENTATION_AUDIT.md § Results |
 | E2E (automated) | Playwright 1.63, Chromium, full running stack | Seven journeys: status change propagating to map, activity feed and summary; analyst RBAC (UI plus a 403 from the API); SEV1 work order through to resolution; assigning a work order as it is created; pause freezing the park clock; demo controls hidden from non-admins; keyboard map |
+| Browser demo | Vitest (`src/lib/demo`) and Playwright (`npm run e2e:pages`) against the static export served under `/after-hours/` | The in-browser server's contract (permissions, SEV1 down/up, state machine, error envelope, ticking) and six journeys: labeling, stopping a ride, the SEV1 lifecycle, pause, analyst permissions, live clock |
 | Load | k6 2.3 | Dashboard reads up to 100 users, and WebSocket fan-out up to 500 sockets. See [PERFORMANCE.md](PERFORMANCE.md) |
 
 ### Isolation approach (API)
@@ -55,6 +56,10 @@ because the schema relies on Postgres features (partial unique indexes, JSONB, `
 | 2026-10-20 | E2E | `npm run e2e` (stack via `./scripts/dev.sh`) | **6 passed**, three consecutive runs |
 | 2026-10-20 | E2E (v3 mockup redesign) | `npx playwright test`, specs updated for the new UI copy | **7 passed** |
 | 2026-10-20 | Web (v3) | prettier, typecheck, lint, `npm test`, `npm run build` | clean; **31 passed**; build OK |
+| 2026-10-20 | API | `uv run pytest -q` (adds the ticket row-lock regression test) | **141 passed** |
+| 2026-10-20 | Web | prettier, typecheck, lint, `npm test`, `npm run build`, `npm run build:pages` | clean; **38 passed**; both builds OK |
+| 2026-10-20 | E2E (full stack) | `npx playwright test` | **7 passed** |
+| 2026-10-20 | E2E (browser demo) | `npm run build:pages && npm run e2e:pages` | **6 passed** |
 | 2026-10-20 | Load | k6, see [PERFORMANCE.md](PERFORMANCE.md) | dashboard reads: 0 failures, p95 48 ms; WebSockets: 500 sockets, 0 failures, 0 out-of-order |
 
 **A bug found by the E2E suite:** every `<Dialog>` used the same `id="dialog-title"`, so with

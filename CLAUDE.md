@@ -36,6 +36,7 @@ uv run uvicorn afterhours.main:app --port 8000
 # Web (from apps/web)
 npm run gen:api && npm run typecheck && npm run lint && npm test && npm run build
 npm run dev                 # proxies /api/v1/* to localhost:8000
+npm run build:pages && npm run e2e:pages   # static browser demo (out/) and its E2E tests
 ```
 
 ## Rules
@@ -58,5 +59,9 @@ npm run dev                 # proxies /api/v1/* to localhost:8000
   contract: match the user's reference mockup), DESIGN.md (v2, out of date). Tokens live in
   `apps/web/src/app/globals.css`; use semantic names, never raw hex. Artwork is hand-built SVG
   (`park-map/park-art.tsx`, `ops/ride-art.tsx`); ride-type icons and gradients come from `lib/ride-type.ts`.
-- The web app is Next 16 with Cache Components: pages under `(ops)` export `instant = false`
-  (client-side session restore).
+- The web app is Next 16 with Cache Components. Ops pages render after client-side session
+  restore; `experimental.instantInsights.validationLevel: "manual-warning"` stands in for
+  per-page `instant = false`, which the static demo export rejects.
+- Browser demo (GitHub Pages, ADR-0005): `src/lib/demo/` mirrors the Python model, services and
+  event payloads. When those change, update the demo too. Regenerate `lib/demo/seed.ts` from
+  `seed.py`; never hand-edit it.

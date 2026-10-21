@@ -1,3 +1,5 @@
+import { BROWSER_DEMO } from "@/lib/demo/mode";
+
 import type { TokenResponse } from "./types";
 
 /** Mirrors the backend's error envelope: `{ error: { code, message, details? } }`. */
@@ -168,4 +170,9 @@ export function createApiClient(opts: ApiClientOptions = {}) {
 
 export type ApiClient = ReturnType<typeof createApiClient>;
 
-export const api = createApiClient();
+export const api = createApiClient(
+  BROWSER_DEMO
+    ? // GitHub Pages build: answer /api/v1/* from the in-browser demo server.
+      { fetchImpl: (input, init) => import("@/lib/demo/fetch").then((m) => m.demoFetch(input, init)) }
+    : {},
+);

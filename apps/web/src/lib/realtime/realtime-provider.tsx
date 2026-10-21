@@ -4,6 +4,7 @@ import { useQueryClient } from "@tanstack/react-query";
 import { createContext, useContext, useEffect, useState } from "react";
 
 import { api } from "@/lib/api/client";
+import { BROWSER_DEMO } from "@/lib/demo/mode";
 
 import { applyEvent, EventSequencer, type ServerMessage } from "./events";
 
@@ -35,6 +36,24 @@ export function RealtimeProvider({ children }: { children: React.ReactNode }) {
   const [state, setState] = useState<ConnectionState>("connecting");
 
   useEffect(() => {
+    if (BROWSER_DEMO) {
+      // GitHub Pages build: events come from the in-browser demo server, not a socket.
+      let unsubscribe: (() => void) | undefined;
+      let stopped = false;
+      const sequencer = new EventSequencer();
+      void import("@/lib/demo/server").then(({ getDemoServer }) => {
+        if (stopped) return;
+        unsubscribe = getDemoServer().subscribe((data) => {
+          if (data.kind === "event" && sequencer.accept(data.id)) applyEvent(qc, data);
+        });
+        setState("live");
+      });
+      return () => {
+        stopped = true;
+        unsubscribe?.();
+      };
+    }
+
     const sequencer = new EventSequencer();
     let socket: WebSocket | null = null;
     let attempt = 0;

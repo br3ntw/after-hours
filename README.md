@@ -8,6 +8,12 @@ guest flow, and incidents are **simulated** and are labeled that way throughout 
 
 ![Command Center: live park map, KPIs, and activity feed (simulated data)](docs/screenshots/command-center.png)
 
+**[Try the live demo →](https://br3ntw.github.io/after-hours/)** Pick a role and run the park:
+stop rides, file work orders and watch the simulation react. The demo is a static build in
+which the API and the simulation run **inside your browser**
+([ADR-0005](docs/adr/0005-browser-only-demo-build.md)). The full system below runs on FastAPI,
+PostgreSQL, Redis and a simulation worker; see [Run it locally](#run-it-locally).
+
 ## Status
 
 | Phase | Scope | State |

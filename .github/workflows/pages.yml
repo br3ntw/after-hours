@@ -1,0 +1,63 @@
+name: Browser demo (GitHub Pages)
+
+# Builds the static, browser-only demo (API and simulation run in the page; see
+# apps/web/src/lib/demo) and publishes it to GitHub Pages, only if its E2E tests pass.
+# One-time setup: repo Settings → Pages → Source: "GitHub Actions".
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: apps/web
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+          cache: npm
+          cache-dependency-path: apps/web/package-lock.json
+      - run: npm ci
+      - name: Build the static demo
+        run: npm run build:pages
+        env:
+          AH_BASE_PATH: /${{ github.event.repository.name }}
+      - name: Browser-demo E2E tests
+        if: github.event.repository.name == 'after-hours'
+        run: |
+          npx playwright install --with-deps chromium
+          npm run e2e:pages
+      - name: Upload Playwright report
+        if: failure()
+        uses: actions/upload-artifact@v4
+        with:
+          name: playwright-report-pages
+          path: apps/web/playwright-report
+          retention-days: 7
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: apps/web/out
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4
