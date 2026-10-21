@@ -107,8 +107,25 @@ async def list_tickets(
     return (await db.scalars(stmt)).unique().all()
 
 
-async def get_ticket(db: AsyncSession, ticket_id: uuid.UUID) -> MaintenanceTicket:
-    ticket = await db.get(MaintenanceTicket, ticket_id)
+async def get_ticket(
+    db: AsyncSession, ticket_id: uuid.UUID, *, lock: bool = False
+) -> MaintenanceTicket:
+    """Load a ticket. ``lock=True`` takes the row lock for a state change.
+
+    Without the lock, an assignment and a transition sent back to back both read the old
+    state; the version check then rejects whichever commits second. With it, the second
+    waits for the first and applies on top of it.
+    """
+    if not lock:
+        ticket = await db.get(MaintenanceTicket, ticket_id)
+    else:
+        ticket = await db.scalar(
+            select(MaintenanceTicket)
+            .where(MaintenanceTicket.id == ticket_id)
+            # OF: the joined attraction/assignee are on the nullable side of outer joins.
+            .with_for_update(of=MaintenanceTicket)
+            .execution_options(populate_existing=True)
+        )
     if ticket is None:
         raise NotFoundError("Ticket not found")
     return ticket
@@ -201,7 +218,7 @@ async def create_ticket(
 async def assign(
     db: AsyncSession, ticket_id: uuid.UUID, assignee_id: uuid.UUID, *, actor: Actor
 ) -> MaintenanceTicket:
-    ticket = await get_ticket(db, ticket_id)
+    ticket = await get_ticket(db, ticket_id, lock=True)
     if ticket.state not in OPEN_STATES:
         raise InvalidTransitionError(f"Cannot assign a {ticket.state.value} ticket")
     tech = await db.get(User, assignee_id)
@@ -247,7 +264,7 @@ async def transition(
     can_update_any: bool,
     note: str | None = None,
 ) -> MaintenanceTicket:
-    ticket = await get_ticket(db, ticket_id)
+    ticket = await get_ticket(db, ticket_id, lock=True)
     # Data-dependent authorization: technicians may only work their own tickets.
     if not can_update_any and ticket.assignee_id != actor.user_id:
         raise PermissionDeniedError("Technicians can only update tickets assigned to them")

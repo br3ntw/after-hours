@@ -71,6 +71,7 @@ test.describe("maintenance", () => {
     ).json();
     await detail.getByLabel("Technician").selectOption({ label: techs[0].full_name });
     await detail.getByRole("button", { name: "Assign" }).click();
+    await expect(detail.getByText("Assigned", { exact: true }).first()).toBeVisible();
     await detail.getByRole("button", { name: "Start work" }).click();
     await detail.getByLabel("Resolution notes").fill("E2E: replaced sensor");
     await detail.getByRole("button", { name: "Mark resolved" }).click();
