@@ -48,7 +48,7 @@ jobs:
           name: playwright-report-pages
           path: apps/web/playwright-report
           retention-days: 7
-      - uses: actions/upload-pages-artifact@v3
+      - uses: actions/upload-pages-artifact@v5
         with:
           path: apps/web/out
 
